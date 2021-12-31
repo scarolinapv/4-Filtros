@@ -24,6 +24,10 @@ export class Tab1Page {
     }
   }
 
+  getAll():void {
+    this.students = this.studentService.getStudents();
+  }
+
   changeStatus(pos: number): void{
     this.studentService.changeStatus(pos);
   }
@@ -37,10 +41,19 @@ export class Tab1Page {
       },{
         text: 'Si',
         handler: () => {
-          this.studentService.deleteStudent(pos)
+          this.studentService.deleteStudent(pos);
+          this.filter();
         }
       }]
     });
     await al.present();
+  }
+  filter(): void{
+    this.getAll();
+    if(this.search && this.search.trim()) {
+      this.students = this.students.filter( ( student ) => {
+        return (student.name.toLocaleLowerCase().indexOf(this.search.toLocaleLowerCase()) > -1 )
+      });
+    }
   }
 }
