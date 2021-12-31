@@ -10,7 +10,7 @@
   <ion-list>
       <div *ngFor="let student of students; index as i" >
         
-          <ion-item-sliding (ionSwipe)="changeStatus(i)">
+          <ion-item-sliding (ionSwipe)="operation(i, $event)">
             <ion-item>
               <ion-label>{{student.name}}</ion-label>
               
@@ -24,6 +24,8 @@
             </ion-item>
 
             <ion-item-options side="start">
+            </ion-item-options>
+            <ion-item-options side="end">
             </ion-item-options>
 
           </ion-item-sliding>
