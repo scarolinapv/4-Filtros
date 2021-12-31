@@ -35,4 +35,8 @@ export class StudentService {
   changeStatus(Position: number): void {
     this.students[Position].active = !this.students[Position].active;
   }
+
+  deleteStudent(Position: number): void{
+    this.students.splice(Position, 1);
+  }
 }

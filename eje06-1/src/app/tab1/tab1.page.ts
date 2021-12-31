@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/code'
 import {Student} from '../models/student'
 import { StudentService } from '../services/student.service';
 import { AlertController } from '@ionic/angular';
@@ -6,8 +6,7 @@ import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
-})
+  styleUrls: ['tab1.page.scss']})
 export class Tab1Page {
 
   students: Student[] = new Array();
